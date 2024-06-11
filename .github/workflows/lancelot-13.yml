@@ -1,4 +1,4 @@
-name: (LINEAGE 20) Redmi 9 (lancelot)
+name: (Kernel-13) Redmi 9 (lancelot)
 on:
   schedule:
   - cron: "0 0 * * 6"
@@ -41,7 +41,7 @@ jobs:
         cd $GITHUB_WORKSPACE/action_dir/kernel_tree
         export PATH=$GITHUB_WORKSPACE/action_dir/proton-clang/bin:$PATH
         export KBUILD_BUILD_HOST=github
-        export KBUILD_BUILD_USER=global-13
+        export KBUILD_BUILD_USER=android-sudo
         make -j$(nproc --all) CC=clang O=out ARCH=arm64 LD=ld.lld CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_ARM32=arm-linux-gnueabi- lancelot_defconfig
         make -j$(nproc --all) CC=clang O=out ARCH=arm64 LD=ld.lld CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_ARM32=arm-linux-gnueabi-
 
