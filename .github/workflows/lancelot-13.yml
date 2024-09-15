@@ -1,4 +1,4 @@
-name: (Kernel-13) Redmi 9 (lancelot)
+name: (Kernel-13-14-15) Redmi 9 (lancelot)
 on:
   schedule:
   - cron: "0 0 * * 6"
@@ -25,16 +25,7 @@ jobs:
     - name: Cloning kernel tree
       run: |
         cd $GITHUB_WORKSPACE/action_dir
-        git clone https://github.com/mt6768-dev/android_kernel_xiaomi_mt6768 -b lineage-20 kernel_tree --depth=1
-
-    - name: Patching kernel tree for KernelSU support
-      run: |
-        cd $GITHUB_WORKSPACE/action_dir/kernel_tree
-         curl -LSsk "https://raw.githubusercontent.com/android-sudo/KernelSU/main/kernel/setup.sh" | bash -s v0.9.6
-        wget -P $GITHUB_WORKSPACE/ https://raw.githubusercontent.com/xiaoleGun/KernelSU_Action/main/patches/patches.sh
-        bash $GITHUB_WORKSPACE/patches.sh
-        echo "CONFIG_KSU=y" >> arch/arm64/configs/lancelot_defconfig
-        echo "CONFIG_OVERLAY_FS=y" >> arch/arm64/configs/lancelot_defconfig
+        git clone https://gitlab.com/Alekseyzu/KernelTree.git -b 14 kernel_tree --depth=1
 
     - name: Building kernel
       run: |
