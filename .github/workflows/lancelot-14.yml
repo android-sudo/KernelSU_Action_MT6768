@@ -25,7 +25,7 @@ jobs:
     - name: Cloning kernel tree
       run: |
         cd $GITHUB_WORKSPACE/action_dir
-        git clone https://github.com/android-sudo/kernel_xiaomi_mt6768 -b 14 kernel_tree --depth=1
+        git clone https://gitlab.com/Alekseyzu/KernelTree.git -b 14 kernel_tree --depth=1
 
     - name: Patching kernel tree for KernelSU support
       run: |
