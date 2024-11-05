@@ -1,4 +1,4 @@
-name: (Kernel-13-14-15) Redmi 9 (lancelot)
+name: (Kernel-13) Redmi 9 (lancelot)
 on:
   schedule:
   - cron: "0 0 * * 6"
