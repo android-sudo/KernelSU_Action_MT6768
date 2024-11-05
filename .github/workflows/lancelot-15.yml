@@ -58,5 +58,5 @@ jobs:
     - name: Uploading update.zip
       uses: actions/upload-artifact@v4
       with:
-        name: KernelSU-${{ env.BUILD_TIME }}-lancelot-14
+        name: KernelSU-${{ env.BUILD_TIME }}-lancelot-15
         path: action_dir/AnyKernel3/*
